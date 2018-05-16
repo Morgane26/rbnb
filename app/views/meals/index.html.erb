@@ -3,6 +3,7 @@
   <br>
   <%= meal.name %>
   <%= link_to "Click to see the meal", meal_path(meal), class: "btn btn-primary btn-lg my-btn"%>
+  <%= link_to 'Back', meals_path %>
   <%= meal.description %>
   <%= meal.date %>
   <%= meal.stock %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 
   resources :meals
+  resources :orders
   # get '/meals', to: 'meals#index'
   # get '/meals/:id', to: 'meals#show'
   # get '/meals/:new', to: 'meals#new'

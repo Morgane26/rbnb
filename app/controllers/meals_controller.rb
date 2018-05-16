@@ -16,7 +16,7 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
-    # @meal = Meal.find.set_meal
+    # @meal = Meal.set_meal
   end
 
   def new
@@ -51,11 +51,11 @@ class MealsController < ApplicationController
 #     redirect_to meals_url, notice: 'Meal was successfully destroyed.'
 #   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meal
-      @meal = Meal.find(params[:id])
-    end
+  # private
+  #   # Use callbacks to share common setup or constraints between actions.
+  #   def set_meal
+  #     @meal = Meal.find(params[:id])
+  #   end
 
 #     # Never trust parameters from the scary internet, only allow the white list through.
 #     def meal_params
