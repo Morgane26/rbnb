@@ -8,15 +8,6 @@ class User < ApplicationRecord
 
   validates :name, presence: :true
 
-  def owner?
 
-    #self.role == 1
-    if self.try(:role) === "owner"
-      #debugger
-      true
-    else
-      false
-    end
-end
 
 end

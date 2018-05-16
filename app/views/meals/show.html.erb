@@ -7,3 +7,7 @@
 <%= @meal.stock %>
 <%= @meal.user.name %>
 
+<%= simple_form_for [@meal, @order] do |f| %>
+  <%= f.input :quantity %>
+  <%= f.button :submit %>
+<% end %>

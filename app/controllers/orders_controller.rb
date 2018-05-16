@@ -3,35 +3,33 @@ class OrdersController < ApplicationController
 
   def index
     #@order = Reservation.all
-    @orders = current_user.orders
+    @orders = Order.all
+    # current_user.
 
   end
 
   def show
   end
 
-  def new
-    @order = Order.new
+  # def new
+  #   @order = Order.new
+  # end
 
-  end
-
-  def edit
-  end
+  # def edit
+  # end
 
 
   def create
-    @order = Order.new(order_params)
-
-
-    @order.user_id = current_user.id
+    @order = Order.new(orders_params)
+    @order.meal = Meal.find(params[:meal_id])
+    # @order.user = current_user
+    @order.user = User.all.sample
 
 
     if @order.save
-
-      redirect_to @order, notice: 'Order was successfully created.'
+      redirect_to root_path, notice: 'Order was successfully created.'
     else
-
-      render :new
+      redirect_to meal_path(Meal.find(params[:meal_id])), alert: "La réservation a échoué"
     end
 
   end
@@ -57,6 +55,6 @@ class OrdersController < ApplicationController
     end
 
     def orders_params
-      params.require(:order).permit(:name,:email, :date, :chef_id, :user_id)
+      params.require(:order).permit(:quantity)
     end
 end

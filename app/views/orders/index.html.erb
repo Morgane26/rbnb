@@ -13,12 +13,11 @@
     <% @orders.each do |order| %>
       <tr>
             <td> orders: <%= order.meal_id %> </td>
-            <td> Name: <%= order.name %> </td>
-            <td> Party size: <%= order.order_size %> </td>
-            <td> Date: <%= reservation.date %> </td>
+            <td> Name: <%= order.meal.name %> </td>
 
-            <td><%= link_to 'Show', order_path(order) %></td>
-          <% if order.user_id == current_user.id %>
+
+            <td><%= link_to 'Show', meal_path(order.meal) %></td>
+          <% if order.user == current_user %>
             <td><%= link_to 'Edit', edit_order_path(order) %></td>
             <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
