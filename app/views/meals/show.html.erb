@@ -1,0 +1,9 @@
+<h1> The meal show of today </h1>
+<%= link_to "Click here to come back to the precedent page", meals_path, class: "btn btn-primary btn-lg my-btn" %>
+<br>
+<%= @meal.name %>
+<%= @meal.description %>
+<%= @meal.date %>
+<%= @meal.stock %>
+<%= @meal.user.name %>
+
