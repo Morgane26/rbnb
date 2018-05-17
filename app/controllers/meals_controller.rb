@@ -14,8 +14,12 @@ class MealsController < ApplicationController
     @meal = Meal.new
   end
 
+  def edit
+  end
+
   def create
     @meal = Meal.new(meal_params)
+
     if @meal.save
       redirect_to meal_path(@meal), notice: 'Meal was successfully created.'
     else
@@ -36,15 +40,18 @@ class MealsController < ApplicationController
     redirect_to meals_url, notice: 'Meal was successfully destroyed.'
   end
 
-private
+
+
+      private
 
     def set_meal
       @meal = Meal.find(params[:id])
     end
 
     def meal_params
-      params.require(:meal).permit(:user, :name, :description, :price, :date, :stock)
+      params.require(:meal).permit(:user)
     end
+
 end
 
 
@@ -58,5 +65,4 @@ end
   # end
   # def chef
   # end
-  # def edit
-  # end
+

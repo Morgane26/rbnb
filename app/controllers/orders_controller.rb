@@ -1,22 +1,23 @@
 class OrdersController < ApplicationController
 
-
-  def index
-    #@order = Reservation.all
-    @orders = Order.all
-    # current_user.
-
-  end
+  # def index
+  #   @order = Reservation.all
+  #   @orders = Order.all
+  #   current_user.
+  #   meals = Meal.all
+  # end
 
   def show
+    @order = Order.find(params[:id])
   end
 
-  # def new
-  #   @order = Order.new
-  # end
+  def new
+    @meal = Meal.find(params[:meal_id])
+    @order = Order.new
+  end
 
-  # def edit
-  # end
+  def edit
+  end
 
 
   def create
@@ -35,26 +36,33 @@ class OrdersController < ApplicationController
   end
 
 
-  def update
-      if @order.update(order_params)
-        redirect_to @order, notice: 'Order was successfully updated.'
-      else
-        render :edit
-      end
-  end
+  # def update
+  #     if @order.update(order_params)
+  #       redirect_to @order, notice: 'Order was successfully updated.'
+  #     else
+  #       render :edit
+  #     end
+  # end
 
 
-  def destroy
-    @order.destroy
-      redirect_to orders_url, notice: 'Orders was successfully destroyed.'
-  end
+  # def destroy
+  #   @order.destroy
+  #     redirect_to orders_url, notice: 'Orders was successfully destroyed.'
+  # end
 
   private
-    def set_order
-      @order = Order.find(params[:id])
-    end
+    # def set_order
+    #   @order = Order.find(params[:id])
+    # end
 
     def orders_params
       params.require(:order).permit(:quantity)
     end
 end
+
+
+
+
+
+
+

@@ -1,13 +1,24 @@
-<h1> The meals index of today </h1>
-<% @meals.each do |meal| %>
-  <br>
-  <%= meal.name %>
-  <%= meal.description %>
-  <%= meal.date %>
-  <%= meal.stock %>
-  <%= meal.user.name %>
-  <%= link_to "Voir ce meal", meal_path(meal) %>
-<% end %>
+<h1 class="text-center" The meals list </h1>
+
+# lien entre la page d'accueil et la vue de toute les assiettes
+
+
+
+  <div class="container">
+    <div class="row">
+      <% @meals.each do |meal| %>
+      <br>
+            <%= meal.name %>
+            <%= meal.description %>
+            <%= meal.date %>
+            <%= meal.stock %>
+            <%= meal.user.name %>
+
+            <%= link_to "See this meal", meal_path(meal), class:"btn btn-primary" %>
+            <% end %>
+      </div>
+  </div>
+
 
 
 
