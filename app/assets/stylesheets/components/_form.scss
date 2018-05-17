@@ -1,0 +1,57 @@
+h2 {
+  font-family: Avenir;
+  font-size: 26px;
+}
+
+.all-edit{
+  text-align: center;
+  width: 400px;
+}
+
+* {
+  margin: auto;
+}
+
+
+.input-edit input {
+  border-radius: 10px;
+}
+
+.input-edit input:hover {
+  border-color: #FFE37F;
+}
+
+.input-edit input:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 227, 127, 0.6);
+  border-color: #FFE37F;
+}
+
+
+.submit-edit .btn {
+  color: black;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.submit-edit .btn:hover {
+  color: #FFE37F;
+  width: 300px;
+  border-radius: 10px;
+  border-color: #FFE37F;
+}
+
+
+h3 {
+  font-family: Avenir;
+  font-size: 20px;
+}
+
+p {
+  font-family: Avenir;
+  font-size: 16px;
+}
+
+body {
+  font-family: Avenir;
+}
+
