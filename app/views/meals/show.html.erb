@@ -1,9 +1,18 @@
-<h1> The meal show of today </h1>
-<%= link_to "Click here to come back to the precedent page", meals_path, class: "btn btn-primary btn-lg my-btn" %>
-<br>
-<%= @meal.name %>
-<%= @meal.description %>
-<%= @meal.date %>
-<%= @meal.stock %>
-<%= @meal.user.name %>
+<h1> Meal Show </h1>
+
+<div class ="container">
+  <div class="list-meal">
+    <li> Meal Name: <%= @meal.name %></li>
+    <li> Meal description: <%= @meal.description %> </li>
+    <li> Meal date: <%= @meal.date %> </li>
+    <li>Stock: <%= @meal.stock %></li>
+    <li>Associated User: <%= @meal.user.name %></li>
+  </div>
+</div>
+
+<div class="container">
+  <div class="bouton-retour">
+    <%= link_to "Click here to come back to the precedent page", meals_path, class: "btn btn-primary btn-lg my-btn" %>
+  </div>
+</div>
 

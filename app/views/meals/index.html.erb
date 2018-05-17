@@ -1,14 +1,19 @@
-<h1> The meals index of today </h1>
-<% @meals.each do |meal| %>
-  <br>
-  <%= meal.name %>
-  <%= link_to "Click to see the meal", meal_path(meal), class: "btn btn-primary btn-lg my-btn"%>
-  <%= meal.description %>
-  <%= meal.date %>
-  <%= meal.stock %>
-  <%= meal.user.name %>
-<% end %>
+<h1>Meals Index</h1>
 
+
+
+<div class="container">
+  <div class="list-all-meal">
+  <% @meals.each do |meal| %>
+    <li class="meal-name"><%= meal.name %></li>
+    <%= link_to "Click to see the meal", meal_path(meal), class: "btn btn-primary btn-lg my-btn"%>
+    <li>Description: <%= meal.description %></li>
+    <li>Date: <%= meal.date %></li>
+    <li>Stock: <%= meal.stock %></li>
+    <li>User Name:<%= meal.user.name %></li>
+  <% end %>
+  </div>
+</div>
 
 
 
