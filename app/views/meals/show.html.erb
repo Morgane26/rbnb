@@ -1,15 +1,28 @@
-<h1> Your meal </h1>
-<%= link_to "Click here to come back to the precedent page", meals_path, class: "btn btn-primary btn-lg my-btn" %>
 
+
+
+
+
+  <div class="row">
+    <h1><%=@meal.name%></h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+    <h5> Les caractéristiques du plat sont : </h5>
+    <ul>
+      <li> Nom du plat : <%= @meal.name %></li>
+      <li> Description : <%= @meal.description%></li>
+      <li> Prix : <%= @meal.price %> euros </li>
+      <li> Stock : <%= @meal.stock%> disponibles </li>
+    </ul>
 
 <%= link_to "Create an order", new_order_path, class: "btn btn-primary btn-lg my-btn" %>
 
-<br>
-<%= @meal.name %>
-<%= @meal.description %>
-<%= @meal.date %>
-<%= @meal.stock %>
-<%= @meal.user.name %>
+<%= link_to "Return", meals_path, class: "btn btn-primary btn-lg my-btn" %>
+
+    </div>
+  </div>
+
 
 
 
