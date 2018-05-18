@@ -6,3 +6,15 @@
 <%= @meal.date %>
 <%= @meal.stock %>
 <%= @meal.user %>
+
+<%= simple_form_for(@meal) do |f| %>
+  <%= f.input :user %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :calories %>
+  <%= f.input :price %>
+  <%= f.input :date %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit %>
+<% end %>

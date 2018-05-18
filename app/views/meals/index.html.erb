@@ -2,25 +2,30 @@
 
 # lien entre la page d'accueil et la vue de toute les assiettes
 
-
-
-  <div class="container">
-    <div class="row">
       <% @meals.each do |meal| %>
       <br>
-            <%= meal.name %>
-            <%= meal.description %>
-            <%= meal.date %>
-            <%= meal.stock %>
-            <%= meal.user.name %>
+        <%= meal.name %>
+        <%= meal.description %>
+        <%= meal.date %>
+        <%= meal.stock %>
+        <%= meal.user.name %>
 
-            <%= link_to "See this meal", meal_path(meal), class:"btn btn-primary" %>
-            <% end %>
+        <%= link_to "See this meal", meal_path(meal), class:"btn btn-primary" %>
+      <% end %>
+
+    <% @meals.each_with_index do |meal, index| %>
+      <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="#" alt="<%= meal.name %>">
+        <%= cl_image_tag("",
+      width: 400, height: 300, crop: :fill) %>
+        <div class="card-body">
+          <h5 class="card-title"><%= meal.name %></h5>
+          <p class="card-text"> <%= meal.description %> </p>
+          <a href="#" class="btn btn-primary"><%= link_to "See this meal", meal_path(meal) %></a>
+        </div>
       </div>
-  </div>
+    <%end%>
 
 
 
-
-
-
+  <h5 class="card-title"><%= @meals.name %></h5>

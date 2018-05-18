@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: elises
+  api_key: '526542232974172'
+  api_secret: TUhP2n2j3ySKdsiauMZKcDhGqtc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: elises
+  api_key: '526542232974172'
+  api_secret: TUhP2n2j3ySKdsiauMZKcDhGqtc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: elises
+  api_key: '526542232974172'
+  api_secret: TUhP2n2j3ySKdsiauMZKcDhGqtc
+  enhance_image_tag: true
+  static_image_support: false
