@@ -1,8 +1,44 @@
-<h1>Add your new meal</h1>
-<%= link_to "Click here to add a new meal", meals_path, class: "btn btn-primary btn-lg my-btn" %>
-<br>
-<%= @meal.name %>
-<%= @meal.description %>
-<%= @meal.date %>
-<%= @meal.stock %>
-<%= @meal.user %>
+<h1>Add a new meal</h1>
+
+<div class="container">
+  <div class="all-edit">
+    <%= simple_form_for(@meal) do |f| %>
+      <div class="form-inputs">
+        <div class="input-edit">
+          <%= f.input :name %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :stock %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :description %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :calories %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :price %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :date %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :photo %>
+        </div>
+        <div class="input-edit">
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <div class= "submit-edit">
+          <%= f.button :submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
