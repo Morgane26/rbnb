@@ -10,7 +10,6 @@ class Meal < ApplicationRecord
   validates :price, presence: :true
   validates :date, presence: :true
   validates :stock, presence: :true
-
   #validates :photo presence true
   #validates :calorie presence true
 

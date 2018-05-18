@@ -4,6 +4,7 @@
     <%= link_to " ", '#', id: "prov" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "see all meals", meals_path %></li>
         <li><%= link_to "se connecter", new_user_session_path %></li>
         <li><%= link_to "se deconnecter", destroy_user_session_path, method: :delete %></li>
         <li><%= link_to "créer un compte", '#' %></li>

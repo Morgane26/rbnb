@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+  # before_action :authenticate_user!
 
   def index
     @meals = Meal.all
@@ -6,7 +7,7 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
-    @order = Order.new
+    # @order = Order.new
     # @user = User.all
   end
 
