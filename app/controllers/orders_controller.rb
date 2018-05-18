@@ -1,18 +1,19 @@
 class OrdersController < ApplicationController
 
-  # def index
+  def index
   #   @order = Reservation.all
-  #   @orders = Order.all
+    @orders = Order.all
   #   current_user.
   #   meals = Meal.all
-  # end
+  end
 
   def show
-    @order = Order.find(params[:id])
+    # @meal = Meal.new
+    # @order = Order.find(params[:id])
   end
 
   def new
-    @meal = Meal.find(params[:meal_id])
+    # @meal = Meal.find(params[:meal_id])
     @order = Order.new
   end
 
@@ -21,16 +22,19 @@ class OrdersController < ApplicationController
 
 
   def create
+    @user = current_user
+    @meal = Meal.find(params[:id])
     @order = Order.new(orders_params)
-    @order.meal = Meal.find(params[:meal_id])
-    # @order.user = current_user
-    @order.user = User.all.sample
+    @order.user = @user
+    @order.meal = @meal
+    # @order.user = User.all.sample
 
 
     if @order.save
-      redirect_to root_path, notice: 'Order was successfully created.'
+      redirect_to order_path(@order)
     else
-      redirect_to meal_path(Meal.find(params[:meal_id])), alert: "La réservation a échoué"
+      render :new
+      # redirect_to meal_path(Meal.find(params[:id])), alert: "La réservation a échoué"
     end
 
   end

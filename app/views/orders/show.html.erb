@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Show Order</h1>
+<!-- <h1>Show Order</h1> -->
 
 <table>
   <thead>
@@ -11,13 +11,8 @@
 
   <tbody>
     <tr>
-      <td> Your order </td>
-      <td> Name: <%= @order.meal.name %> </td>
-      <td><%= link_to 'Show your order', meal_path(@order.meal) %></td>
-      <% if @order.user == current_user %>
-        <td><%= link_to 'Edit', edit_order_path(@order) %></td>
-        <td><%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+      <td> Your order has been created !</td>
+
     </tr>
   </tbody>
 </table>

@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   # get "meals/:id", to: "meals#show"
   # get "meals/new", to: "meals#new"
   # post "meals", to: "meals#create"
-
-  resources :meals, only: [:index, :new, :show] do
-    resources :orders, only: [:index, :create, :show], shallow: true
+  resources :orders, only: [:show]
+  resources :meals do
+    member do
+    resources :orders, only: [:index, :new, :create]
+    end
   end
-
 end
